@@ -1,12 +1,10 @@
-package com.example.echo.repository;
+package com.example.echo.user;
 
 import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
-
-import com.example.echo.model.User;
 
 @Repository
 public interface UserRepository extends ListCrudRepository<User, UUID> {

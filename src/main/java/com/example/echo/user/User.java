@@ -1,4 +1,4 @@
-package com.example.echo.model;
+package com.example.echo.user;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
