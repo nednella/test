@@ -4,13 +4,13 @@ spring:
 
     datasource:
         name: 'echo'
-        url: jdbc:postgresql://localhost:5432/echo
+        url: 'jdbc:postgresql://localhost:5432/echo'
         username: 'nednella'
         password: 'password'
 
-    jpa:
-        hibernate:
-            ddl-auto: 'create-drop'
+    sql:
+        init:
+            mode: 'always'
 
     devtools:
         restart:
