@@ -31,12 +31,12 @@ public class User {
     private String password;
 
     @CreationTimestamp
-    @Column(name = "created_on")
-    private LocalDateTime createdOn;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updated_on")
-    private LocalDateTime updatedOn;
+    @Column(name = "updated_at")
+    private LocalDateTime updatedAt;
 
     public User() {
     }
@@ -63,12 +63,12 @@ public class User {
         return password;
     }
 
-    public LocalDateTime getCreatedOn() {
-        return createdOn;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public LocalDateTime getUpdatedOn() {
-        return updatedOn;
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
     }
 
 }
