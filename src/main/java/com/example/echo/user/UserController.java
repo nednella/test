@@ -12,6 +12,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,15 +25,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserController {
 
     private final UserRepository repo;
+    private final PasswordEncoder encoder;
 
-    public UserController(UserRepository repo) {
+    public UserController(UserRepository repo, PasswordEncoder encoder) {
         this.repo = repo;
+        this.encoder = encoder;
     }
 
     // create
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody @Valid User user) {
+        user.setPassword(encoder.encode(user.getPassword()));
         repo.save(user);
     }
 
